@@ -1,50 +1,10 @@
-/* Estilos generales */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Personalizado para la aplicación */
 .home-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #ffc107; /* Fondo principal */
   font-family: Arial, sans-serif;
 }
 
@@ -53,14 +13,13 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  width: 20rem;
+  height: 30rem;
   transition: transform 0.3s ease;
   text-align: center;
-  padding: 10px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #bd2a2a; /* Fondo de las tarjetas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  height: 250px;
 }
 
 .image-container:hover {
@@ -69,20 +28,28 @@
 
 .image {
   width: 100%;
-  height: 150px;
   object-fit: cover;
   border-radius: 10px;
 }
 
+h1{
+  color: black;
+}
+
 p {
   margin-top: 10px;
-  font-size: 16px;
-  color: #333;
+  font-size: 2.75rem;
+  color: black;
 }
 
 /* Nueva clase para ocultar los contenedores cuando estamos en la página de "En Construcción" */
+.construction-container {
+  background-color: #bd2a2a ;
+}
 body.working-page .image-container {
+  background-color: #ffc107;
   display: none;
+ 
 }
 
 /* Estilos responsivos */

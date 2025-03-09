@@ -20,12 +20,12 @@ function App() {
   return (
     <div className="home-container">
       <div className="image-container" onClick={() => navigate('/login')}>
-        <img src="ruta/a/tu/imagen/cliente.jpg" alt="Clientes" className="image" />
+        <img src="/img/Client.png" alt="Clientes" className="image" style={{ padding: '3rem' }} />
         <p>Clientes</p>
       </div>
 
-      <div className="image-container" onClick={() => window.open('/working', '_blank')}>
-        <img src="ruta/a/tu/imagen/restaurante.jpg" alt="Restaurantes" className="image" />
+      <div id='' className="image-container" onClick={() => window.open('/working', '_blank')}>
+        <img src="/img/Restaurant.png" alt="Restaurantes" className="image" />
         <p>Restaurantes</p>
       </div>
 
