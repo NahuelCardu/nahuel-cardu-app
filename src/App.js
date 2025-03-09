@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { Login } from './logger';
+import Working from './working'; // Importamos el componente de "En construcción"
 import './App.css';
 
 function App() {
+  const navigate = useNavigate(); // Hook para redirigir dentro de la SPA
+  const location = useLocation(); // Hook para obtener la ubicación actual
+
+  // Efecto para cambiar la clase en el body dependiendo de la ruta activa
+  useEffect(() => {
+    if (location.pathname === '/working') {
+      document.body.classList.add('working-page');
+    } else {
+      document.body.classList.remove('working-page');
+    }
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="home-container">
+      <div className="image-container" onClick={() => navigate('/login')}>
+        <img src="ruta/a/tu/imagen/cliente.jpg" alt="Clientes" className="image" />
+        <p>Clientes</p>
+      </div>
+
+      <div className="image-container" onClick={() => window.open('/working', '_blank')}>
+        <img src="ruta/a/tu/imagen/restaurante.jpg" alt="Restaurantes" className="image" />
+        <p>Restaurantes</p>
+      </div>
+
+      {/* Definimos las rutas */}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/working" element={<Working />} />
+      </Routes>
     </div>
   );
 }
+
+
 
 export default App;

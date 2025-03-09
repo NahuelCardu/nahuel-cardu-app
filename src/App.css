@@ -1,3 +1,4 @@
+/* Estilos generales */
 .App {
   text-align: center;
 }
@@ -34,5 +35,63 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Personalizado para la aplicación */
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 250px;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Nueva clase para ocultar los contenedores cuando estamos en la página de "En Construcción" */
+body.working-page .image-container {
+  display: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    margin-bottom: 20px;
   }
 }
